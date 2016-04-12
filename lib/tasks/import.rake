@@ -1,7 +1,7 @@
 require 'csv'
 
 desc "Import sales data from csv files"
-task import: :environment do
+task import_data: :environment do
 
   filename = File.join Rails.root, "db/csv_data/merchants.csv"
   counter = 0
@@ -26,12 +26,12 @@ task import: :environment do
 
   CSV.foreach(filename, headers: true) do |row|
     item = Item.create(
-                        name: row[1]
-                        description: row[2]
-                        unit_price: row[3]
-                        merchant_id: row[4]
-                        created_at: row[5]
-                        updated_at: row[6]
+                        name:        row[1],
+                        description: row[2],
+                        unit_price:  row[3],
+                        merchant_id: row[4],
+                        created_at:  row[5],
+                        updated_at:  row[6]
                         )
     counter +=1 if item.persisted?
   end
@@ -51,29 +51,24 @@ task import: :environment do
   counter = 0
 
   CSV.foreach(filename, headers: true) do |row|
-    transaction = Transaction.create(
-                                     invoice_id: row[1]
-                                     credit_card_number: row[2]
-                                     result: row[3]
-                                     created_at: row[4]
-                                     updated_at: row[5]
-                                     )
+    transaction = Transaction.create row.to_h
      counter +=1 if transaction.persisted?
   end
   puts "Imported #{counter} transactions"
 
-  filename = File.join Rails.root, "db/csv_data/transactions.csv"
+  filename = File.join Rails.root, "db/csv_data/invoice_items.csv"
   counter = 0
 
   CSV.foreach(filename, headers: true) do |row|
-    transaction = InvoiceItems.create(
-                                     invoice_id: row[1]
-                                     credit_card_number: row[2]
-                                     result: row[3]
-                                     created_at: row[4]
-                                     updated_at: row[5]
-                                     )
-     counter +=1 if transaction.persisted?
+    invoice_item = InvoiceItem.create!(
+                                       item_id:    row[1],
+                                       invoice_id: row[2],
+                                       quantity:   row[3],
+                                       unit_price: row[4],
+                                       created_at: row[5],
+                                       updated_at: row[6]
+                                       )
+     counter +=1 if invoice_item.persisted?
   end
-  puts "Imported #{counter} transactions"
+  puts "Imported #{counter} invoice_items"
 end
