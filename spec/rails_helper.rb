@@ -10,6 +10,10 @@ module ApplicationHelper
   def create_merchant(name)
     Merchant.create(name: name )
   end
+
+  def create_customer(first_name, last_name)
+    Customer.create(first_name: first_name, last_name: last_name )
+  end
 end
 # Add additional requires below this line. Rails is not loaded until this point!
 
