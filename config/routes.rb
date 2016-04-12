@@ -14,6 +14,12 @@ Rails.application.routes.draw do
           get :find,     to: "customers_finder#show"
         end
       end
+      resources :items, only: [:index, :show] do
+        collection do
+          get :find_all, to: "items_finder#index"
+          get :find,     to: "items_finder#show"
+        end
+      end
     end
   end
 
