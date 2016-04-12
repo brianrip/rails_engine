@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :merchants, only: [:index, :show] do
+        get :items, to: "merchants/items#index"
+
         collection do
           get :find_all, to: "merchants/finder#index"
           get :find,     to: "merchants/finder#show"
