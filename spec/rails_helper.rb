@@ -39,6 +39,15 @@ module ApplicationHelper
                       result: result
                       )
   end
+
+  def create_invoice_item(item_id, invoice_id, unit_price)
+    InvoiceItem.create(
+                      item_id: item_id,
+                      invoice_id: invoice_id,
+                      quantity: 5,
+                      unit_price: unit_price
+                      )
+  end
 end
 # Add additional requires below this line. Rails is not loaded until this point!
 
