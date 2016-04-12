@@ -24,13 +24,11 @@ module ApplicationHelper
                 )
   end
 
-  def create_inoice(customer_id, merchant_id, status)
-    Item.create(
+  def create_invoice(customer_id, merchant_id, status)
+    Invoice.create(
                 customer_id: customer_id,
                 merchant_id: merchant_id,
-                status: status,
-                merchant_id: merchant_id,
-                description: "This thing is so sweet."
+                status: status
                 )
   end
 end
