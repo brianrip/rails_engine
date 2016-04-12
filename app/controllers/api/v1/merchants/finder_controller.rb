@@ -1,7 +1,6 @@
 module Api
   module V1
     module Merchants
-
       class FinderController < ApiController
         respond_to :json
 
