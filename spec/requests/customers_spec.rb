@@ -19,6 +19,6 @@ RSpec.describe "customer api" do
     get "/api/v1/customers/#{customer1.id}"
 
     expect(status).to eq(200)
-    expect(response.body).to eq(Customer.find(customer1.id).to_json)
+    expect(response.body).to eq(customer1.to_json)
   end
 end

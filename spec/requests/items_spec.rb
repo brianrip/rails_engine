@@ -21,6 +21,6 @@ RSpec.describe "item api" do
     get "/api/v1/items/#{item1.id}"
 
     expect(status).to eq(200)
-    expect(response.body).to eq(Item.find(item1.id).to_json)
+    expect(response.body).to eq(item1.to_json)
   end
 end

@@ -31,6 +31,14 @@ module ApplicationHelper
                 status: status
                 )
   end
+
+  def create_transaction(invoice_id, result)
+    Transaction.create(
+                      invoice_id: invoice_id,
+                      credit_card_number: "4242424242424242",
+                      result: result
+                      )
+  end
 end
 # Add additional requires below this line. Rails is not loaded until this point!
 

@@ -25,6 +25,6 @@ RSpec.describe "invoice api" do
     get "/api/v1/invoices/#{invoice1.id}"
 
     expect(status).to eq(200)
-    expect(response.body).to eq(Invoice.find(invoice1.id).to_json)
+    expect(response.body).to eq(invoice1.to_json)
   end
 end

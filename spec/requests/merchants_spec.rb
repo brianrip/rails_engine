@@ -19,6 +19,6 @@ RSpec.describe "Merchants api" do
     get "/api/v1/merchants/#{merchant1.id}"
 
     expect(status).to eq(200)
-    expect(response.body).to eq(Merchant.find(merchant1.id).to_json)
+    expect(response.body).to eq(merchant1.to_json)
   end
 end
