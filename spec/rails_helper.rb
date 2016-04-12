@@ -8,7 +8,45 @@ require 'rspec/rails'
 
 module ApplicationHelper
   def create_merchant(name)
-    Merchant.create(name: name )
+    Merchant.create(name: name)
+  end
+
+  def create_customer(first_name, last_name)
+    Customer.create(first_name: first_name, last_name: last_name )
+  end
+
+  def create_item(name, price, merchant_id)
+    Item.create(
+                name: name,
+                unit_price: price,
+                merchant_id: merchant_id,
+                description: "This thing is so sweet."
+                )
+  end
+
+  def create_invoice(customer_id, merchant_id, status)
+    Invoice.create(
+                customer_id: customer_id,
+                merchant_id: merchant_id,
+                status: status
+                )
+  end
+
+  def create_transaction(invoice_id, result)
+    Transaction.create(
+                      invoice_id: invoice_id,
+                      credit_card_number: "4242424242424242",
+                      result: result
+                      )
+  end
+
+  def create_invoice_item(item_id, invoice_id, unit_price)
+    InvoiceItem.create(
+                      item_id: item_id,
+                      invoice_id: invoice_id,
+                      quantity: 5,
+                      unit_price: unit_price
+                      )
   end
 end
 # Add additional requires below this line. Rails is not loaded until this point!
