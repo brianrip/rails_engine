@@ -22,6 +22,8 @@ Rails.application.routes.draw do
       end
 
       resources :items, only: [:index, :show] do
+        get :merchant, to: "items/merchant#show"
+        get :invoice_items, to: "items/invoice_items#index"
         collection do
           get :find_all, to: "items/finder#index"
           get :find,     to: "items/finder#show"
@@ -33,8 +35,8 @@ Rails.application.routes.draw do
         get :transactions,  to: "invoices/transactions#index"
         get :invoice_items, to: "invoices/invoice_items#index"
         get :items,         to: "invoices/items#index"
-        get :customer,     to: "invoices/customer#index"
-        get :merchant,     to: "invoices/merchant#index"
+        get :customer,     to: "invoices/customer#show"
+        get :merchant,     to: "invoices/merchant#show"
 
         collection do
           get :find_all, to: "invoices/finder#index"
@@ -53,8 +55,8 @@ Rails.application.routes.draw do
       end
 
       resources :invoice_items, only: [:index, :show] do
-        get :invoice, to: "invoice_items/invoice#index"
-        get :item, to: "invoice_items/item#index"
+        get :invoice, to: "invoice_items/invoice#show"
+        get :item, to: "invoice_items/item#show"
 
         collection do
           get :find_all, to: "invoice_items/finder#index"

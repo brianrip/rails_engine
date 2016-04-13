@@ -4,7 +4,7 @@ module Api
       class ItemController < ApiController
         respond_to :json
 
-        def index
+        def show
           respond_with InvoiceItem.find_by(id: params[:invoice_item_id]).item
         end
       end
