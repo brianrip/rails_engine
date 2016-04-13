@@ -22,4 +22,3 @@ RSpec.describe "Invoice_items invoice api" do
     expect(item_count).to eq(2)
   end
 end
-# GET /api/v1/items/:id/invoice_items returns a collection of associated invoice items
