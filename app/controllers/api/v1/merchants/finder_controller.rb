@@ -15,7 +15,7 @@
         private
 
           def merchant_params
-            params.permit(:name, :created_at, :updated_at)
+            params.permit(:id, :name, :created_at, :updated_at)
           end
       end
     end
