@@ -21,8 +21,4 @@ RSpec.describe "Invoice items api" do
     expect(status).to eq(200)
     expect(response_count).to eq(2)
   end
-
 end
-# GET /api/v1/invoices/:id/items returns a collection of associated items
-# GET /api/v1/invoices/:id/customer returns the associated customer
-# GET /api/v1/invoices/:id/merchant returns the associated merchant

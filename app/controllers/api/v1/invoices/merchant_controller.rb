@@ -1,11 +1,11 @@
 module Api
   module V1
     module Invoices
-      class MerchantsController < ApiController
+      class MerchantController < ApiController
         respond_to :json
 
         def index
-          respond_with Merchant.where(invoice_id: params[:invoice_id])
+          respond_with Invoice.find_by(id: params[:invoice_id]).merchant
         end
       end
     end
