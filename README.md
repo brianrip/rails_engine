@@ -157,7 +157,7 @@ We want to maintain the original Business Intelligence functionality
 of SalesEngine, but this time expose the data through our API.
 
 Remember that ActiveRecord is your friend. Much of the complicated logic
-from your original SalesEngine can be expressed quite succinctly
+from your original  SalesEngine can be expressed quite succinctly
 using ActiveRecord queries.
 
 #### All Merchants
