@@ -24,5 +24,3 @@ RSpec.describe 'Items best day' do
     expect(Time.parse(date["best_day"]).day).to eq(invoice1.created_at.utc.day)
   end
 end
-# GET /api/v1/items/:id/best_day returns the date with the most sales for the given item using the invoice date# GET /api/v1/items/most_items?quantity=x returns the top x item instances ranked by total number sold
-# GET /api/v1/items/most_revenue?quantity=x returns the top x items ranked by total revenue generated

@@ -33,8 +33,8 @@
   end
 
   def favorite_customer
-    customer_id = invoices.paid.group_by(&:customer_id).max_by do  |k, v|
-      v.count
+    customer_id = invoices.paid.group_by(&:customer_id).max_by do  | _, invoice|
+      invoice.count
     end.first
 
     Customer.find(customer_id)

@@ -5,7 +5,7 @@ module Api
         respond_to :json
 
         def index
-          respond_with  InvoiceItem.where(customer_params)
+          respond_with InvoiceItem.where(customer_params)
         end
 
         def show

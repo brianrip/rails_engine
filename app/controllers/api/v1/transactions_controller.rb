@@ -4,7 +4,7 @@ module Api
       respond_to :json
 
       def index
-        respond_with  Transaction.all
+        respond_with Transaction.all
       end
 
       def show

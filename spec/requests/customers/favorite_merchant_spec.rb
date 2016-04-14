@@ -21,4 +21,3 @@ RSpec.describe 'Customers top merchant' do
     expect(merchant["id"]).to eq(merchant1.id)
   end
 end
-# GET /api/v1/customers/:id/favorite_merchant returns a merchant where the customer has conducted the most successful transactions

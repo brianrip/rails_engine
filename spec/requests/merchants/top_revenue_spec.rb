@@ -20,9 +20,6 @@ RSpec.describe "Merchants with most revenue api" do
     transaction2 = create_transaction(invoice2.id, "success")
     transaction3 = create_transaction(invoice3.id, "success")
 
-
-    # GET /api/v1/merchants/most_revenue?quantity=x returns the top x merchants ranked by total revenue
-
     x = 2
 
     get "/api/v1/merchants/most_revenue?quantity=#{x}"

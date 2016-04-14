@@ -4,7 +4,7 @@ module Api
       respond_to :json
 
       def index
-        respond_with  Merchant.all
+        respond_with Merchant.all
       end
 
       def show

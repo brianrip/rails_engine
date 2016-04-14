@@ -13,5 +13,4 @@ RSpec.describe "Merchant items api" do
     expect(status).to eq(200)
     expect(response.body).to eq(Item.all.to_json)
   end
-
 end
