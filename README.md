@@ -20,17 +20,17 @@ __To run tests:__
 
 __To view JSON endpoints in development:__
 
-`rails s`
+run `rails s`
 
-visit :`http://localhost:3000/api/v1/merchants` to view the endpoint that delivers all merchants, all other available endpoints are listed below
+visit :`http://localhost:3000/api/v1/merchants` view the endpoint that delivers all merchants
 
 __To run spec harness:__
 
-git clone https://github.com/turingschool/rales_engine_spec_harness.git
+`git clone https://github.com/turingschool/rales_engine_spec_harness.git`
 
-cd rales_engine_spec_harness
+`cd rales_engine_spec_harness`
 
-bundle
+`bundle`
 
 run `rake`
 
