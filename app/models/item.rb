@@ -6,10 +6,10 @@ class Item < ActiveRecord::Base
   default_scope { order('id ASC')}
 
   def best_day
-    invoices.paid
+    { best_day: invoices.paid
     .group('"invoices"."created_at"')
     .sum("quantity * unit_price")
-    .sort_by(&:last)
-    .map(&:first).last
+    .sort_by { |day| day.last }
+    .map { |sorted_day| sorted_day.first }.last }
   end
 end

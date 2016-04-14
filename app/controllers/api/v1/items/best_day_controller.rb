@@ -6,8 +6,6 @@ module Api
 
         def show
           respond_with Item.find_by(id: params[:item_id]).best_day
-          require "pry"
-          binding.pry
         end
       end
     end
