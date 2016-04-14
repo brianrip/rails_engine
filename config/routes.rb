@@ -13,6 +13,7 @@ Rails.application.routes.draw do
           get :find_all, to: "merchants/finder#index"
           get :find,     to: "merchants/finder#show"
           get :random,   to: "merchants/random#show"
+          get :most_revenue,   to: "merchants/most_revenue#index"
         end
       end
 

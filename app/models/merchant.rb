@@ -3,6 +3,18 @@
   has_many :items
   has_many :transactions, through: :invoices
 
+  def self.most_revenue(quantity)
+    invoices = Invoice.paid
+                      .joins(:invoice_items)
+                      .select("merchant_id,
+                              sum(invoice_items.quantity * invoice_items.unit_price) AS invoice_revenue")
+                      .group("invoices.merchant_id")
+                      .order("invoice_revenue DESC")
+                      .limit(quantity)
+    invoices.map { |invoice| Merchant.find(invoice.merchant_id) }
+  end
+
+
   def revenue
     {
     revenue: invoices.paid
