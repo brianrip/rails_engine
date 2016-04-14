@@ -10,7 +10,7 @@ class Item < ActiveRecord::Base
      best_day: invoices.paid.select("invoices.created_at",
      "SUM(invoice_items.unit_price * invoice_items.quantity) AS total_revenue")
      .group('created_at').reorder('total_revenue DESC')
-     .take(1).first.created_at
+     .first.created_at
      }
     end
 end
