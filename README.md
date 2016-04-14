@@ -13,7 +13,7 @@ __To run program:__
 
 `rake db:setup`
 
-`rake import_date`
+`rake import_data`
 
 __To run tests:__
 
