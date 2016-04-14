@@ -17,5 +17,4 @@ RSpec.describe "Invoice transactions api" do
     expect(status).to eq(200)
     expect(response.body).to eq(Transaction.limit(2).to_json)
   end
-
 end

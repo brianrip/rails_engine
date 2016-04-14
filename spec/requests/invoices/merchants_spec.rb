@@ -17,4 +17,3 @@ RSpec.describe "Invoice merchant api" do
     expect(merchant["name"]).to eq("Joey")
   end
 end
-# GET /api/v1/invoices/:id/merchant returns the associated merchant
