@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/brianrip/rails_engine/badges/gpa.svg)](https://codeclimate.com/github/brianrip/rails_engine)[![Test Coverage](https://codeclimate.com/github/brianrip/rails_engine/badges/coverage.svg)](https://codeclimate.com/github/brianrip/rails_engine/coverage)
 ## Rails Engine
 
 This is an individual project from module 3 at Turing. This app delivers JSON API endpoints including business intelligence data.
