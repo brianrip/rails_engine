@@ -1,4 +1,4 @@
-class Merchant < ActiveRecord::Base
+ class Merchant < ActiveRecord::Base
   has_many :invoices
   has_many :items
   has_many :transactions, through: :invoices
