@@ -6,10 +6,12 @@ class Item < ActiveRecord::Base
   default_scope { order('id ASC')}
 
   def best_day
-    { best_day: invoices.paid
-    .group('"invoices"."created_at"')
-    .sum("quantity * unit_price")
-    .sort_by { |day| day.last }
-    .map { |sorted_day| sorted_day.first }.last }
-  end
+    {
+     best_day: invoices.select("invoices.created_at",
+     "SUM(invoice_items.unit_price * invoice_items.quantity) AS total_revenue")
+     .joins(:transactions).where("result='success'")
+     .group('created_at').reorder('total_revenue DESC')
+     .take(1).first.created_at
+     }
+    end
 end

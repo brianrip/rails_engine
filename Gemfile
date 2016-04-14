@@ -11,11 +11,8 @@ gem 'responders', '~> 2.0'
 gem 'active_model_serializers', github: "rails-api/active_model_serializers"
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-group :coverage do
-  gem 'simplecov', :require => false
-end
-
 group :development, :test do
+  gem 'simplecov', :require => false
   gem 'pry'
   gem 'rspec-rails'
   gem 'database_cleaner'
