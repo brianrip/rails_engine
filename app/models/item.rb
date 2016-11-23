@@ -12,5 +12,5 @@ class Item < ActiveRecord::Base
      .group('created_at').reorder('total_revenue DESC')
      .first.created_at
      }
-    end
+  end
 end
